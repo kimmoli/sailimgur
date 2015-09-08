@@ -4,7 +4,7 @@ import Sailfish.Silica 1.0
 BackgroundItem {
     z: 1;
 
-    width: (deviceOrientation === Orientation.Landscape || deviceOrientation === Orientation.LandscapeInverted) ? galgrid.width / 5 : galgrid.width / 3;
+    width: galgrid.cellWidth;
     height: width;
 
     Image {

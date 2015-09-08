@@ -150,7 +150,12 @@ Page {
         SilicaGridView {
             id: galgrid;
 
-            cellWidth: (deviceOrientation === Orientation.Landscape || deviceOrientation === Orientation.LandscapeInverted) ? width / 5 : width / 3;
+            cellWidth: {
+                if (Screen.sizeCategory >= Screen.Large)
+                    return Math.floor((deviceOrientation === Orientation.Landscape || deviceOrientation === Orientation.LandscapeInverted) ? width / 7 : width / 5);
+                else 
+                    return Math.floor((deviceOrientation === Orientation.Landscape || deviceOrientation === Orientation.LandscapeInverted) ? width / 5 : width / 3);
+                }
             cellHeight: cellWidth;
             clip: true;
             pressDelay: 0;
